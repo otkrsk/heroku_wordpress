@@ -85,8 +85,8 @@ $table_prefix  = 'wp_';
  */
 define('WP_DEBUG', false);
 
-define('WP_HOME', getenv('WP_HOME'));
-define('WP_SITEURL', getenv('WP_SITEURL'));
+// define('WP_HOME', getenv('WP_HOME'));
+// define('WP_SITEURL', getenv('WP_SITEURL'));
 
 /* That's all, stop editing! Happy blogging. */
 

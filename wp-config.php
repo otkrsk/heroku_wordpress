@@ -2,8 +2,10 @@
 
 // Require the Dotenv plugin
 require __DIR__ . '/vendor/autoload.php';
-$dotenv = new \Dotenv\Dotenv(__DIR__);
-$dotenv->load();
+if(getenv('APP_ENV') === 'development') {
+	$dotenv = new \Dotenv\Dotenv();
+	$dotenv->load(__DIR__);
+}
 
 /**
  * The base configuration for WordPress

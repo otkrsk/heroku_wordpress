@@ -92,7 +92,10 @@ define('WP_DEBUG', false);
 // define('WP_HOME', getenv('WP_HOME'));
 // define('WP_SITEURL', getenv('WP_SITEURL'));
 
-/** SSL */
+/**
+	* SSL
+	* Added this so that WordPress would play nice with Heroku
+	*/
 if($_SERVER['SERVER_NAME'] != 'localhost') {
 	define('FORCE_SSL_ADMIN', true);
 	// in some setups HTTP_X_FORWARDED_PROTO might contain

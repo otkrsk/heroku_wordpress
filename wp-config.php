@@ -24,9 +24,6 @@ $dotenv->load();
  * @package WordPress
  */
 
-define('WP_HOME', 'https://fantomex.herokuapps.com');
-define('WP_SITEURL', 'https://fantomex.herokuapps.com');
-
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', getenv('DB_DATABASE'));
@@ -87,6 +84,9 @@ $table_prefix  = 'wp_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
+
+define('WP_HOME', 'https://fantomex.herokuapps.com');
+define('WP_SITEURL', 'https://fantomex.herokuapps.com');
 
 /* That's all, stop editing! Happy blogging. */
 

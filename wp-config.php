@@ -85,8 +85,8 @@ $table_prefix  = 'wp_';
  */
 define('WP_DEBUG', false);
 
-define('WP_HOME', 'https://fantomex.herokuapps.com');
-define('WP_SITEURL', 'https://fantomex.herokuapps.com');
+define('WP_HOME', getenv('WP_HOME'));
+define('WP_SITEURL', getenv('WP_SITEURL'));
 
 /* That's all, stop editing! Happy blogging. */
 

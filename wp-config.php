@@ -2,9 +2,11 @@
 
 // Require the Dotenv plugin
 require __DIR__ . '/vendor/autoload.php';
-if(getenv('APP_ENV') === 'development') {
-	$dotenv = new \Dotenv\Dotenv();
-	$dotenv->load(__DIR__);
+
+
+if($_SERVER['SERVER_NAME'] == 'localhost') {
+	$dotenv = new \Dotenv\Dotenv(__DIR__);
+	$dotenv->load();
 }
 
 /**
@@ -91,12 +93,14 @@ define('WP_DEBUG', false);
 // define('WP_SITEURL', getenv('WP_SITEURL'));
 
 /** SSL */
-define('FORCE_SSL_ADMIN', true);
-// in some setups HTTP_X_FORWARDED_PROTO might contain
-// a comma-separated list e.g. http,https
-// so check for https existence
-if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
-	$_SERVER['HTTPS']='on';
+if($_SERVER['SERVER_NAME'] != 'localhost') {
+	define('FORCE_SSL_ADMIN', true);
+	// in some setups HTTP_X_FORWARDED_PROTO might contain
+	// a comma-separated list e.g. http,https
+	// so check for https existence
+	if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
+		$_SERVER['HTTPS']='on';
+}
 
 /* That's all, stop editing! Happy blogging. */
 
